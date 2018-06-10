@@ -168,7 +168,7 @@ button:focus,
     position               : absolute;
     z-index                : 100;
     background             : rgba(238, 238, 238,0.5);
-    margin                 : 9% 0 0 13%;
+    margin                 : 0 0 0 13%;
     }
 
 .blocks {
@@ -212,12 +212,6 @@ button:focus,
         }
     }
 
-@media (min-width : 769px) and (max-width : 1024px) {
-    .columns-block {
-        margin-top    : 30px;
-        margin-bottom : 30px;
-        }
-    }
 
 /* --------------------
  * Section Background
