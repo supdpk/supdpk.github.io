@@ -188,14 +188,14 @@ button:focus,
     -webkit-flex : 2 0 0;
     flex         : 2 0 0;
     position     : relative;
-    background   : #ffffff;
+    background   : rgba(255, 255, 255, .5);
     }
 
 @media (max-width : 768px) {
 
     .columns-block {
         display    : block;
-        margin     : 0;
+        margin     : 3% 0 0 3%;
         box-shadow : none;
         }
 
@@ -224,7 +224,7 @@ button:focus,
  * -------------------*/
 
 .gray-bg {
-    background-color : #ffffff;
+    background   : rgba(255, 255, 255, .3);
     }
 
 /* --------------------
