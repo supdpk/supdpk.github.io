@@ -20,7 +20,6 @@ body {
     line-height : 1.8em;
     color       : #3d3d50;
     font-weight : 300;
-    background  : url("../img/pattern-bg.png") fixed;
     }
 
 /* --------------------------------------
@@ -166,6 +165,10 @@ button:focus,
     margin                 : 60px auto;
     padding                : 0;
     box-shadow             : 0 0 0 1px #eaeaea;
+    position               : absolute;
+    z-index                : 100;
+    background             : rgba(238, 238, 238,0.5);
+    margin                 : 9% 0 0 13%;
     }
 
 .blocks {
@@ -237,6 +240,7 @@ button:focus,
 .section-wrapper {
     padding       : 50px;
     border-bottom : 1px solid #eaeaea;
+    position: relative;
     }
 
 @media (max-width : 480px) {
@@ -567,3 +571,16 @@ button:focus,
     text-align : center;
     top        : 65%;
     }
+
+/* ---- particles.js container ---- */
+
+  #particles-js{
+    width               : 100%;
+    height              : 100%;
+    background-color    : #fff;
+    background-image    : url('');
+    background-size     : cover;
+    background-position : 50% 50%;
+    background-repeat   : no-repeat;
+    position            : fixed;
+  }
