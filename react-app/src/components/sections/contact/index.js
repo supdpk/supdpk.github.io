@@ -1,6 +1,7 @@
 import React from "react";
 import feedbackValidation from "../../../helper/validation/feedback.validation";
 import { githubUserAPI } from "../../../services/github.service";
+import googleFormAPI from "../../../services/google-form.service";
 
 class Contact extends React.Component {
     constructor(props) {
@@ -33,7 +34,8 @@ class Contact extends React.Component {
     formSubmit(event){
         event.preventDefault();
         let {form} = this.state;
-        console.log(form)
+        // console.log(form)
+        googleFormAPI.sendForm(form);
         // this.setState({form});
     }
     fieldtype(event){

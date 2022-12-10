@@ -25,7 +25,7 @@ const feedbackValidation = {
     },
     validateEmail: (email) => {
         if (email.value !== "") {
-            let emailfilter = "/^([a-zA-Z0-9_\.\-])+\@(([a-zA-Z0-9\-])+\.)+([a-zA-Z0-9]{2,4})+$/";
+            let emailfilter = /^([a-zA-Z0-9_\.\-])+\@(([a-zA-Z0-9\-])+\.)+([a-zA-Z0-9]{2,4})+$/;
             if (!emailfilter.test(email.value))
                 email.error = "Please enter a valid Email";
             else
