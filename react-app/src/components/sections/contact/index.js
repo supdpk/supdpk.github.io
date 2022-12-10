@@ -33,10 +33,11 @@ class Contact extends React.Component {
     }
     formSubmit(event){
         event.preventDefault();
-        let {form} = this.state;
-        // console.log(form)
+        let { form } = this.state;
         googleFormAPI.sendForm(form);
-        // this.setState({form});
+        this.props.alert("Message has been sent to Deepak! you will soon hear from him");
+        form = feedbackValidation.reset();
+        this.setState({form});
     }
     fieldtype(event){
         let {form} = this.state;
@@ -83,35 +84,35 @@ class Contact extends React.Component {
                                 <div className={(form.name.error=="")?"form-group":"form-group has-error"}>
                                     <label forhtml="InputName" className="control-label"> Name </label>
                                     <input type="text" name="name" className="form-control" id="InputName"
-                                        placeholder="Full Name" onChange={this.fieldtype}/>
+                                        placeholder="Full Name" onChange={this.fieldtype} value={form.name.value}/>
                                     <p className="text-danger text-small">{(form.name.error=="")?"":form.name.error}</p>
 
                                 </div>
                                 <div className={(form.email.error=="")?"form-group":"form-group has-error"}>
                                     <label forhtml="InputEmail" className="control-label">Email address</label>
                                     <input type="email" name="email" className="form-control" id="InputEmail"
-                                        placeholder="Email" onChange={this.fieldtype}/>
+                                        placeholder="Email" onChange={this.fieldtype} value={form.email.value}/>
                                         <p className="text-danger text-small">{(form.email.error=="")?"":form.email.error}</p>
                                 </div>
                                 <div className={(form.phone.error=="")?"form-group":"form-group has-error"}>
                                     <label forhtml="InputPhone">Phone No</label>
                                     <input type="text" name="phone" className="form-control" id="InputPhone"
-                                        placeholder="Phone Number" onChange={this.fieldtype}/>
+                                        placeholder="Phone Number" onChange={this.fieldtype} value={form.phone.value}/>
                                     <p className="text-danger text-small">{(form.phone.error=="")?"":form.phone.error}</p>
                                 </div>
                                 <div className={(form.subject.error=="")?"form-group":"form-group has-error"}>
                                     <label forhtml="InputSubject">Subject</label>
                                     <input type="text" name="subject" className="form-control" id="InputSubject"
-                                        placeholder="Subject" onChange={this.fieldtype}/>
+                                        placeholder="Subject" onChange={this.fieldtype} value={form.subject.value}/>
                                     <p className="text-danger text-small">{(form.subject.error=="")?"":form.subject.error}</p>
                                 </div>
                                 <div className={(form.message.error=="")?"form-group":"form-group has-error"}>
                                     <label forhtml="message-text" className="control-label">Message</label>
                                     <textarea className="form-control" rows="4" required="" name="message" id="message-text"
-                                        placeholder="Write message" onChange={this.fieldtype}></textarea>
+                                        placeholder="Write message" onChange={this.fieldtype} value={form.message.value}></textarea>
                                     <p className="text-danger text-small">{(form.message.error=="")?"":form.message.error}</p>
                                 </div>
-                                <button type="submit" className="btn btn-primary">Submit</button>
+                                <button type="submit" className="btn btn-primary" disabled={!form.validate}>Submit</button>
                             </form>
                         </div>
                     </div>

@@ -1,4 +1,5 @@
 import React from 'react';
+import Alert from './components/layout/alert';
 import Credit from './components/layout/credit';
 import Intro from './components/layout/intro/index';
 import Contact from './components/sections/contact';
@@ -13,9 +14,20 @@ import { githubUserAPI } from './services/github.service';
 
 
 class App extends React.Component {
+  state = {
+    intro:{
+      name:'',
+      title:'',
+      about:'',
+      img:'',
+      linkedin:''
+      ,github:''
+    },
+    alert:null
+  };
   constructor(props){
     super(props);
-    this.state = {intro:{name:'',title:'',about:'',img:'',linkedin:'',github:''}};
+    this.alert = this.alert.bind(this);
   }
   async componentDidMount(){
     let {intro} = this.state;
@@ -23,8 +35,15 @@ class App extends React.Component {
     this.setState({intro});
     document.title = intro.name + "- Github Page"
   }
+
+  alert(data){
+    let { alert } = this.state;
+    alert=data;
+    this.setState({alert});
+  }
+
   render() {
-    let {intro} = this.state;
+    let {intro,alert} = this.state;
     return (
       <div id="main-wrapper" className="main-container">
         <div id="particles-js"></div>
@@ -43,11 +62,12 @@ class App extends React.Component {
                 <Interest />
                 <Repository/>
                 <Project />
-                <Contact />
+                <Contact alert={this.alert}/>
                 <Credit data={intro}/>
               </div>
             </div>
           </div>
+          <Alert alert={alert}/>
         </div>
       </div>
     );

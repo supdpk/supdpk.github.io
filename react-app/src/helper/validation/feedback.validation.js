@@ -1,10 +1,11 @@
 const feedbackValidation = {
     form: {
-        name: { value: "", error: "" },
-        email: { value: "", error: "" },
-        phone: { value: "", error: "" },
-        subject: { value: "", error: "" },
-        message: { value: "", error: "" }
+        name: { value: "", error: "", touched:false },
+        email: { value: "", error: "", touched:false },
+        phone: { value: "", error: "", touched:false },
+        subject: { value: "", error: "", touched:false },
+        message: { value: "", error: "", touched:false },
+        validate:false
     },
     validate: (form) => {
         form.name = feedbackValidation.validateName(form.name);
@@ -12,6 +13,7 @@ const feedbackValidation = {
         form.phone = feedbackValidation.validatePhone(form.phone);
         form.subject = feedbackValidation.validateSubject(form.subject);
         form.message = feedbackValidation.validateMessage(form.message);
+        form.validate = feedbackValidation.validateForm(form);
         return form;
     },
     validateName: (name) => {
@@ -20,6 +22,7 @@ const feedbackValidation = {
                 name.error = "Name should be greater than 5 character"
             else
                 name.error = "";
+            name.touched = true;
         }
         return name;
     },
@@ -30,6 +33,7 @@ const feedbackValidation = {
                 email.error = "Please enter a valid Email";
             else
                 email.error = ""
+            email.touched = true;
         }
         return email;
     },
@@ -45,6 +49,7 @@ const feedbackValidation = {
                 phone.error = "Please enter a valid Phone No";
             else
                 phone.error = "";
+            phone.touched = true;
         }
         return phone;
     },
@@ -54,6 +59,7 @@ const feedbackValidation = {
                 subject.error = "Subject should be greater than 8 characters"
             else
                 subject.error = "";
+            subject.touched = true;
         }
         return subject;
     },
@@ -65,8 +71,38 @@ const feedbackValidation = {
                 message.error = (totalChar-charleft)+" characters left"
             else
                 message.error = "";
+            message.touched = true;
         }
         return message;
+    },
+    validateForm:(form)=>{
+        let response = true;
+        if(form.name.error.length>0) response = false;
+        else response = form.name.touched
+
+        if(form.email.error.length>0)response = false;
+        else response = form.email.touched
+
+        if(form.phone.error.length>0) response = false;
+        else response = form.phone.touched
+        
+        if(form.subject.error.length>0) response = false;
+        else response = form.subject.touched
+
+        if(form.message.error.length>0) response = false;
+        else response = form.subject.touched
+
+        return response;
+    },
+    reset:()=>{
+        return {
+            name: { value: "", error: "", touched:false },
+            email: { value: "", error: "", touched:false },
+            phone: { value: "", error: "", touched:false },
+            subject: { value: "", error: "", touched:false },
+            message: { value: "", error: "", touched:false },
+            validate:false
+        };
     }
 }
 
