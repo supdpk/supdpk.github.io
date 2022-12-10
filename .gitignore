@@ -1,3 +1,2 @@
-serve
-index.js
 \.vs
+\node_modules
