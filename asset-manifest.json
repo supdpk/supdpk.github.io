@@ -1,8 +1,8 @@
 {
   "files": {
-    "main.css": "/static/css/main.b2509f3e.css",
-    "main.js": "/static/js/main.44bab62f.js",
-    "static/js/787.b701888c.chunk.js": "/static/js/787.b701888c.chunk.js",
+    "main.css": "/static/css/main.24c0f1ff.css",
+    "main.js": "/static/js/main.93a628ae.js",
+    "static/js/787.c53258db.chunk.js": "/static/js/787.c53258db.chunk.js",
     "static/media/fontawesome-webfont.svg?v=4.6.3": "/static/media/fontawesome-webfont.ed6298903ae1554c7f3e.svg",
     "static/media/fontawesome-webfont.ttf?v=4.6.3": "/static/media/fontawesome-webfont.f0af1680f082547a7aae.ttf",
     "static/media/glyphicons-halflings-regular.svg": "/static/media/glyphicons-halflings-regular.060b2710bdbbe3dfe48b.svg",
@@ -13,14 +13,14 @@
     "static/media/glyphicons-halflings-regular.woff": "/static/media/glyphicons-halflings-regular.82b1212e45a2bc35dd73.woff",
     "static/media/glyphicons-halflings-regular.eot": "/static/media/glyphicons-halflings-regular.5be1347c682810f199c7.eot",
     "static/media/glyphicons-halflings-regular.woff2": "/static/media/glyphicons-halflings-regular.be810be3a3e14c682a25.woff2",
-    "static/media/preloader.svg": "/static/media/preloader.764cfc376324eacee734df7391e44d9c.svg",
+    "static/media/preloader.svg": "/static/media/preloader.764cfc376324eacee734.svg",
     "index.html": "/index.html",
-    "main.b2509f3e.css.map": "/static/css/main.b2509f3e.css.map",
-    "main.44bab62f.js.map": "/static/js/main.44bab62f.js.map",
-    "787.b701888c.chunk.js.map": "/static/js/787.b701888c.chunk.js.map"
+    "main.24c0f1ff.css.map": "/static/css/main.24c0f1ff.css.map",
+    "main.93a628ae.js.map": "/static/js/main.93a628ae.js.map",
+    "787.c53258db.chunk.js.map": "/static/js/787.c53258db.chunk.js.map"
   },
   "entrypoints": [
-    "static/css/main.b2509f3e.css",
-    "static/js/main.44bab62f.js"
+    "static/css/main.24c0f1ff.css",
+    "static/js/main.93a628ae.js"
   ]
 }
