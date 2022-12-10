@@ -7,6 +7,7 @@ import Experience from './components/sections/experience';
 import Expertise from './components/sections/expertise';
 import Interest from './components/sections/interest';
 import Project from './components/sections/project';
+import Repository from './components/sections/repository';
 import Skills from './components/sections/skills';
 import { githubUserAPI } from './services/github.service';
 
@@ -35,13 +36,14 @@ class App extends React.Component {
             </div>
             <div className="right-col-block blocks">
               <div className='theiaStickySidebar'>
-                <Contact />
                 <Expertise />
                 <Experience />
                 <Education />
                 <Skills />
                 <Interest />
+                <Repository/>
                 <Project />
+                <Contact />
                 <Credit data={intro}/>
               </div>
             </div>

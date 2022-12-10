@@ -615,3 +615,11 @@ button:focus,
 .text-small{
   font-size: x-small;
 }
+.text-black{
+  color: #000;
+}
+
+.text-black:hover{
+  color: #333;
+  text-decoration: underline;
+}

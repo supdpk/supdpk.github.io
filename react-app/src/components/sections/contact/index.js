@@ -1,5 +1,6 @@
 import React from "react";
 import feedbackValidation from "../../../helper/validation/feedback.validation";
+import { githubUserAPI } from "../../../services/github.service";
 
 class Contact extends React.Component {
     constructor(props) {
@@ -7,13 +8,27 @@ class Contact extends React.Component {
         this.state = {
             form: feedbackValidation.form,
             address: {
-                office_address:"",
+                work_address:{
+                    company_name:"",
+                    address_1:"",
+                    address_2:"",
+                    city:"",
+                    state:"",
+                    country:"",
+                    zip:""
+                },
                 phone:"",
                 email:""
             }
         }
         this.formSubmit = this.formSubmit.bind(this);
         this.fieldtype = this.fieldtype.bind(this);
+    }
+    async componentDidMount()
+    {
+        let { address } = this.state;
+        address = await githubUserAPI.getContactInfo();
+        this.setState({address})
     }
     formSubmit(event){
         event.preventDefault();
@@ -29,7 +44,7 @@ class Contact extends React.Component {
     }
 
     render() {
-        let { form } = this.state;
+        let { form,address } = this.state;
         return (<section className="section-contact section-wrapper gray-bg">
             <div className="container-fluid">
                 <div className="row">
@@ -43,17 +58,18 @@ class Contact extends React.Component {
                     <div className="col-md-12">
                         <address>
                             <strong>Office Address</strong><br />
-                            Trancisco Labs<br />
-                            J-9/1, DLF Phase 2, Sector - 28<br />
-                            Gurgaon, Haryana, India
+                            {address.work_address.company_name}<br />
+                            {address.work_address.address_1}<br />
+                            {address.work_address.address_2}<br />
+                            {address.work_address.city}, {address.work_address.state}, {address.work_address.country}
                         </address>
                         <address>
                             <strong>Mobile</strong><br />
-                            +91 843 738 9009
+                            {address.phone}
                         </address>
                         <address>
                             <strong>Email</strong><br />
-                            <a href="mailto:deepak.belbase4@gmail.com">deepak.belbase4@gmail.com</a>
+                            <a href={"mailto:"+address.email}>{address.email}</a>
                         </address>
                     </div>
                 </div>
