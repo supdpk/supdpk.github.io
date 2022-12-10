@@ -1,6 +1,7 @@
 import React from 'react';
 import Credit from './components/layout/credit';
 import Intro from './components/layout/intro/index';
+import Contact from './components/sections/contact';
 import Education from './components/sections/education';
 import Experience from './components/sections/experience';
 import Expertise from './components/sections/expertise';
@@ -19,6 +20,7 @@ class App extends React.Component {
     let {intro} = this.state;
     intro = await githubUserAPI.getUser();
     this.setState({intro});
+    document.title = intro.name + "- Github Page"
   }
   render() {
     let {intro} = this.state;
@@ -33,6 +35,7 @@ class App extends React.Component {
             </div>
             <div className="right-col-block blocks">
               <div className='theiaStickySidebar'>
+                <Contact />
                 <Expertise />
                 <Experience />
                 <Education />

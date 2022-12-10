@@ -610,3 +610,8 @@ button:focus,
 ::-webkit-scrollbar-thumb:hover {
   background: #555; 
 }
+
+/* ------------------------- */
+.text-small{
+  font-size: x-small;
+}
