@@ -1,7 +1,7 @@
 {
   "files": {
-    "main.css": "/static/css/main.c884c50c.css",
-    "main.js": "/static/js/main.8261631e.js",
+    "main.css": "/static/css/main.3c12f10b.css",
+    "main.js": "/static/js/main.982092e2.js",
     "static/js/787.b701888c.chunk.js": "/static/js/787.b701888c.chunk.js",
     "static/media/fontawesome-webfont.svg?v=4.6.3": "/static/media/fontawesome-webfont.ed6298903ae1554c7f3e.svg",
     "static/media/fontawesome-webfont.ttf?v=4.6.3": "/static/media/fontawesome-webfont.f0af1680f082547a7aae.ttf",
@@ -15,12 +15,12 @@
     "static/media/glyphicons-halflings-regular.woff2": "/static/media/glyphicons-halflings-regular.be810be3a3e14c682a25.woff2",
     "static/media/preloader.svg": "/static/media/preloader.764cfc376324eacee734.svg",
     "index.html": "/index.html",
-    "main.c884c50c.css.map": "/static/css/main.c884c50c.css.map",
-    "main.8261631e.js.map": "/static/js/main.8261631e.js.map",
+    "main.3c12f10b.css.map": "/static/css/main.3c12f10b.css.map",
+    "main.982092e2.js.map": "/static/js/main.982092e2.js.map",
     "787.b701888c.chunk.js.map": "/static/js/787.b701888c.chunk.js.map"
   },
   "entrypoints": [
-    "static/css/main.c884c50c.css",
-    "static/js/main.8261631e.js"
+    "static/css/main.3c12f10b.css",
+    "static/js/main.982092e2.js"
   ]
 }
