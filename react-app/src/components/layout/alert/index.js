@@ -9,15 +9,17 @@ class Alert extends React.Component {
     componentDidUpdate(prevProps,pervState,snapshot) {
         
         let { alerts } = this.state;
-        console.log('blah',pervState.alerts.length,alerts.length);
+        // console.log('Previous Properties',prevProps);
+        // console.log('current Properties',this.props);
 
-        if (this.props.alert && !alerts.find((a)=>{ return a.text==this.props.alert })) {
+        if (this.props.alert && (pervState.alerts.length !== prevProps.alerts.length || pervState.alerts.length==0)) {
             let id = alerts.length +1;
-            alerts.push(alertService.inject(this.props.alert,id));
-            this.setState({ alerts })
-            // console.log("This will work now", alerts);
+            let new_alert = alertService.inject(this.props.alert,id);
+            alerts.push(new_alert);
+            this.setState({ alerts });
             let interval = setInterval(() => {
                 alerts = alertService.changeStatus(alerts,id);
+                // console.log('alreday happen');
                 this.setState({ alerts })
                 clearInterval(interval);
             }, 5000);

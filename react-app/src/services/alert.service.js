@@ -8,6 +8,7 @@ const alertService = {
     inject:(message,id) => {
         let alert = alertService.alert;
         alert.text = message;
+        alert.class = "alert alert-success"
         alert.id = id;
         return alert; 
     },

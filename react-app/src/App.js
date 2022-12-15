@@ -20,10 +20,11 @@ class App extends React.Component {
       title:'',
       about:'',
       img:'',
-      linkedin:''
-      ,github:''
+      linkedin:'',
+      github:''
     },
-    alert:null
+    alert:null,
+    alerts:[]
   };
   constructor(props){
     super(props);
@@ -33,17 +34,18 @@ class App extends React.Component {
     let {intro} = this.state;
     intro = await githubUserAPI.getUser();
     this.setState({intro});
-    document.title = intro.name + "- Github Page"
+    document.title = intro.name + " - Github Page"
   }
 
   alert(data){
-    let { alert } = this.state;
+    let { alert,alerts } = this.state;
     alert=data;
-    this.setState({alert});
+    alerts.push(data);
+    this.setState({alert,alerts});
   }
 
   render() {
-    let {intro,alert} = this.state;
+    let {intro,alert,alerts} = this.state;
     return (
       <div id="main-wrapper" className="main-container">
         <div id="particles-js"></div>
@@ -67,7 +69,7 @@ class App extends React.Component {
               </div>
             </div>
           </div>
-          <Alert alert={alert}/>
+          <Alert alert={alert} alerts={alerts}/>
         </div>
       </div>
     );
