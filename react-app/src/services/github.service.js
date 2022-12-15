@@ -47,5 +47,12 @@ export const githubUserAPI ={
         let response = await request.json();
         result = response.repositories;
         return result;
+    },
+    getInterests:async ()=>{
+        let result = [] ;
+        let request = await fetch(`${githubUserAPI.base_url}/interests.json`);
+        let response = await request.json();
+        result = response.interests;
+        return result;
     }
 }
