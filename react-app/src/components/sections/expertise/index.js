@@ -1,6 +1,10 @@
 import React from "react";
 
 class Expertise extends React.Component {
+    constructor(props){
+        super(props);
+        this.state = { data:[] }
+    }
     render() {
         return (<section className="expertise-wrapper section-wrapper gray-bg">
             <div className="container-fluid">
