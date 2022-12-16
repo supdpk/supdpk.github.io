@@ -20,7 +20,7 @@ export default class Credit extends React.Component{
             <div className="container-fluid">
                 <div className="row">
                     <div className="col-md-12">
-                        <div className="copytext">&copy; {year}, <a href={data.github} target="_blank">{data.name}</a></div>
+                        <div className="copytext">&copy; {year}, <a href={data.github} target="_blank">{data.name}</a> | Design By: <a href="https://twitter.com/themehippo" target="_blank">themehippo</a> </div>
                     </div>
                 </div>
             </div>
