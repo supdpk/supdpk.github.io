@@ -1,7 +1,10 @@
 import React from 'react';
+import { connect } from 'react-redux';
+
 import Alert from './components/layout/alert';
 import Credit from './components/layout/credit';
 import Intro from './components/layout/intro/index';
+import { SpinnerContainer,mapStateToProps,mapDispatchToProps } from './components/layout/spinner/container';
 import Contact from './components/sections/contact';
 import Education from './components/sections/education';
 import Experience from './components/sections/experience';
@@ -10,6 +13,7 @@ import Interest from './components/sections/interest';
 import Project from './components/sections/project';
 import Repository from './components/sections/repository';
 import Skills from './components/sections/skills';
+
 import { githubUserAPI } from './services/github.service';
 
 
@@ -31,8 +35,10 @@ class App extends React.Component {
     this.alert = this.alert.bind(this);
   }
   async componentDidMount(){
+    this.props.show();
     let {intro} = this.state;
     intro = await githubUserAPI.getUser();
+    this.props.hide();
     this.setState({intro});
     document.title = intro.name + " - Github Page"
   }
@@ -49,7 +55,7 @@ class App extends React.Component {
     return (
       <div id="main-wrapper" className="main-container">
         <div id="particles-js"></div>
-
+        <SpinnerContainer />
         <div className="row">
           <div className="columns-block container">
             <div className="left-col-block blocks">
@@ -76,4 +82,4 @@ class App extends React.Component {
   }
 }
 
-export default App;
+export default connect(mapStateToProps, mapDispatchToProps)(App);

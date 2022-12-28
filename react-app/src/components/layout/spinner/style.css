@@ -1,0 +1,19 @@
+.loader-overlay{
+    background-color: rgba(261,261,261,0.8);
+    z-index: 1024;
+    position: fixed;
+    height: 100vh;
+    width: 100%;
+    text-align: center;
+}
+
+.hide{
+    display: none;
+}
+
+.spinner{
+    top: 50%;
+    position: absolute;
+    font-size:10vh;
+    transform: translateY(-50%);
+}

@@ -9,8 +9,6 @@ class Alert extends React.Component {
     componentDidUpdate(prevProps,pervState,snapshot) {
         
         let { alerts } = this.state;
-        // console.log('Previous Properties',prevProps);
-        // console.log('current Properties',this.props);
 
         if (this.props.alert && (pervState.alerts.length !== prevProps.alerts.length || pervState.alerts.length==0)) {
             let id = alerts.length +1;
@@ -19,12 +17,12 @@ class Alert extends React.Component {
             this.setState({ alerts });
             let interval = setInterval(() => {
                 alerts = alertService.changeStatus(alerts,id);
-                // console.log('alreday happen');
                 this.setState({ alerts })
                 clearInterval(interval);
             }, 5000);
         }
     }
+    
     render() {
         let { alerts } = this.state;
         return (<React.Fragment>
