@@ -54,5 +54,12 @@ export const githubUserAPI ={
         let response = await request.json();
         result = response.interests;
         return result;
+    },
+    getExpertise: async ()=>{
+        let result = [] ;
+        let request = await fetch(`${githubUserAPI.base_url}/expertise.json`);
+        let response = await request.json();
+        result = response.expertise;
+        return result;
     }
 }

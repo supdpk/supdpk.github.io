@@ -68,7 +68,7 @@ class App extends React.Component {
                 <Education />
                 <Skills />
                 <Interest />
-                <Repository/>
+                {/* <Repository/> */}
                 <Project />
                 <Contact alert={this.alert}/>
                 <Credit data={intro}/>
